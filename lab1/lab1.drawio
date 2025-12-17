@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" version="29.2.7">
+  <diagram id="lab1" name="Lab1">
+    <mxGraphModel dx="1305" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;" value="Lab1 - Трёхуровневая сеть (ContainerLab)&lt;br&gt;VLAN10: PC1 (10.10.10.0/24) • VLAN20: PC2 (10.20.20.0/24)&lt;br&gt;Trunk: tagged VLAN10/20 • Access: untagged VLAN" vertex="1">
+          <mxGeometry height="60" width="960" x="70" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="r01" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" value="R01.TEST&#xa;RouterOS CHR&#xa;ether2 trunk&#xa;vlan10: 10.10.10.1&#xa;vlan20: 10.20.20.1" vertex="1">
+          <mxGeometry height="120" width="220" x="440" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="sw01" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" value="SW01.L3.01.TEST&#xa;Linux bridge br0&#xa;Trunk ports: eth1/eth2/eth3&#xa;tagged VLAN 10,20" vertex="1">
+          <mxGeometry height="110" width="220" x="440" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="sw02_01" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" value="SW02.L3.01.TEST&#xa;Uplink eth1 trunk (10,20 tagged)&#xa;Downlink eth2 access VLAN10 (untagged)" vertex="1">
+          <mxGeometry height="110" width="260" x="200" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="sw02_02" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" value="SW02.L3.02.TEST&#xa;Uplink eth1 trunk (10,20 tagged)&#xa;Downlink eth2 access VLAN20 (untagged)" vertex="1">
+          <mxGeometry height="110" width="260" x="640" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="pc1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" value="PC1&#xa;DHCP VLAN10&#xa;10.10.10.200/24" vertex="1">
+          <mxGeometry height="70" width="160" x="250" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="pc2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" value="PC2&#xa;DHCP VLAN20&#xa;10.20.20.200/24" vertex="1">
+          <mxGeometry height="70" width="160" x="690" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="r01" style="endArrow=none;html=1;strokeWidth=2;" target="sw01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="sw01" style="endArrow=none;html=1;strokeWidth=2;" target="sw02_01">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="sw01" style="endArrow=none;html=1;strokeWidth=2;" target="sw02_02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="sw02_01" style="endArrow=none;html=1;strokeWidth=2;" target="pc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="sw02_02" style="endArrow=none;html=1;strokeWidth=2;" target="pc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

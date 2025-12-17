@@ -21,3 +21,7 @@ __pycache__/
 # ContainerLab runtime artifacts (optional)
 clab-*/**
 *.clab.*
+
+# containerlab artifacts
+lab1/clab-*/
+clab-*/
