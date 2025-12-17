@@ -139,10 +139,14 @@ docker exec -it clab-lab1-pc2 sh /pc2_dhcp.sh
 - PC2: `10.20.20.200/24`
 
 ## 9. Проверка связности (ping)
-### 9.1 До шлюзов
+### 9.1
+Пинг:
 ```bash
 docker exec -it clab-lab1-pc1 ping -c 4 10.10.10.1
+```
+Вывод:
 
+```bash
 PING 10.10.10.1 (10.10.10.1) 56(84) bytes of data.
 64 bytes from 10.10.10.1: icmp_seq=1 ttl=64 time=0.425 ms
 64 bytes from 10.10.10.1: icmp_seq=2 ttl=64 time=0.642 ms
@@ -152,9 +156,15 @@ PING 10.10.10.1 (10.10.10.1) 56(84) bytes of data.
 --- 10.10.10.1 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 3110ms
 rtt min/avg/max/mdev = 0.425/0.574/0.642/0.088 ms
+```
+Пинг:
 
+```bash
 docker exec -it clab-lab1-pc2 ping -c 4 10.20.20.1
+```
+Вывод:
 
+```bash
 PING 10.20.20.1 (10.20.20.1) 56(84) bytes of data.
 64 bytes from 10.20.20.1: icmp_seq=1 ttl=64 time=0.392 ms
 64 bytes from 10.20.20.1: icmp_seq=2 ttl=64 time=0.497 ms
@@ -176,7 +186,8 @@ docker exec -it clab-lab1-pc1 ping -c 4 10.20.20.200
 ```
 Вывод:
 
-```PING 10.20.20.200 (10.20.20.200) 56(84) bytes of data.
+```bash
+PING 10.20.20.200 (10.20.20.200) 56(84) bytes of data.
 64 bytes from 10.20.20.200: icmp_seq=1 ttl=63 time=0.537 ms
 64 bytes from 10.20.20.200: icmp_seq=2 ttl=63 time=0.865 ms
 64 bytes from 10.20.20.200: icmp_seq=3 ttl=63 time=1.04 ms
@@ -189,12 +200,13 @@ rtt min/avg/max/mdev = 0.537/0.873/1.052/0.207 ms
 ```
 Пинг:
 
-```docker exec -it clab-lab1-pc2 ping -c 4 10.10.10.200
-
+```bash
+docker exec -it clab-lab1-pc2 ping -c 4 10.10.10.200
 ```
 Вывод:
 
-```PING 10.10.10.200 (10.10.10.200) 56(84) bytes of data.
+```bash
+PING 10.10.10.200 (10.10.10.200) 56(84) bytes of data.
 64 bytes from 10.10.10.200: icmp_seq=1 ttl=63 time=0.285 ms
 64 bytes from 10.10.10.200: icmp_seq=2 ttl=63 time=0.946 ms
 64 bytes from 10.10.10.200: icmp_seq=3 ttl=63 time=1.26 ms
