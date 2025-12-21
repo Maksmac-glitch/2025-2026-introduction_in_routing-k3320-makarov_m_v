@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" modified="2025-12-21T00:00:00.000Z" agent="ChatGPT" version="22.1.0" type="device">
+  <diagram id="lab3" name="Lab3">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Routers -->
+        <mxCell id="rny" value="R01.NY" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="60" y="240" width="90" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="rlnd" value="R01.LND" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="260" y="90" width="90" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="rhki" value="R01.HKI" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="520" y="90" width="90" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="rspb" value="R01.SPB" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="760" y="240" width="90" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="rmsk" value="R01.MSK" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="520" y="390" width="90" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="rlbn" value="R01.LBN" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="260" y="390" width="90" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Endpoints -->
+        <mxCell id="sgi" value="SGI Prism (linux)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="120" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="pc1" value="PC1 (SPB, linux)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="240" width="160" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Links -->
+        <mxCell id="e1" style="endArrow=none;html=1;" edge="1" parent="1" source="rny" target="rlnd">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="endArrow=none;html=1;" edge="1" parent="1" source="rlnd" target="rhki">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="endArrow=none;html=1;" edge="1" parent="1" source="rhki" target="rspb">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="endArrow=none;html=1;" edge="1" parent="1" source="rspb" target="rmsk">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="endArrow=none;html=1;" edge="1" parent="1" source="rmsk" target="rlbn">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" style="endArrow=none;html=1;" edge="1" parent="1" source="rlbn" target="rny">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" style="endArrow=none;html=1;dashed=1;" edge="1" parent="1" source="rhki" target="rlbn">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e8" style="endArrow=none;html=1;dashed=1;" edge="1" parent="1" source="sgi" target="rny">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" style="endArrow=none;html=1;dashed=1;" edge="1" parent="1" source="rspb" target="pc1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Caption -->
+        <mxCell id="cap" value="Рисунок 1 — Схема связи IP/MPLS сети компании «RogaIKopita Games» (Lab3)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="160" y="520" width="720" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

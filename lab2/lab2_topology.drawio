@@ -1,0 +1,57 @@
+<mxfile host="app.diagrams.net" modified="2025-12-20T00:00:00.000Z" agent="draw.io" version="22.1.0" type="device">
+  <diagram id="lab2" name="Lab2">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Lab2 — RogaIKopita Games LLC (MSK–FRT–BRL)&#10;WAN: статическая маршрутизация • LAN: DHCP в каждом офисе" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="20" width="940" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="brl" value="R01.BRL&#10;LAN 10.30.30.0/24&#10;GW 10.30.30.1&#10;WAN: 172.16.0.2/30, 172.16.0.5/30" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="440" y="120" width="260" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="msk" value="R01.MSK&#10;LAN 10.10.10.0/24&#10;GW 10.10.10.1&#10;WAN: 172.16.0.1/30, 172.16.0.9/30" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="170" y="310" width="260" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="frt" value="R01.FRT&#10;LAN 10.20.20.0/24&#10;GW 10.20.20.1&#10;WAN: 172.16.0.6/30, 172.16.0.10/30" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="710" y="310" width="260" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pc3" value="PC3 (Berlin)&#10;DHCP: 10.30.30.x" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="490" y="260" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pc1" value="PC1 (Moscow)&#10;DHCP: 10.10.10.x" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="220" y="460" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pc2" value="PC2 (Frankfurt)&#10;DHCP: 10.20.20.x" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="760" y="460" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="w1" value="MSK–BRL&#10;172.16.0.0/30" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="msk" target="brl">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="w2" value="BRL–FRT&#10;172.16.0.4/30" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="brl" target="frt">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="w3" value="MSK–FRT&#10;172.16.0.8/30" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="msk" target="frt">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="l1" value="LAN" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="msk" target="pc1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2" value="LAN" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="frt" target="pc2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3" value="LAN" style="endArrow=none;html=1;strokeWidth=2;" edge="1" parent="1" source="brl" target="pc3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
